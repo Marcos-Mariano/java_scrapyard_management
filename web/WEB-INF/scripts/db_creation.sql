@@ -28,8 +28,7 @@
    , ROLE VARCHAR (200) NOT NULL
    , NAME VARCHAR (200) NOT NULL
    , LOGIN VARCHAR(20) NOT NULL
-  ,  PASSWORDHASH BIGINT NOT NULL
-,password varchar (200) not null
+   ,password varchar (200) not null
 );
 
 
@@ -47,7 +46,7 @@ CREATE TABLE CLIENTES(
 
 
 
-INSERT INTO USUARIOS VALUES(default, 'ADMIN', 'Administrador', 'admin', 1509442,'admin');
+INSERT INTO USUARIOS VALUES(default, 'ADMIN', 'Administrador', 'admin','admin');
 
 
 
