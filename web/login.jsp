@@ -3,7 +3,33 @@
     Created on : 26/05/2019, 13:56:24
     Author     : Marcos
 --%>
+<%@page import="br.com.fatecpg.jdbc.User"%>
+<%
+    String errorMessage = null;
+    if(request.getParameter("loginForm")!=null){
+        try{
+            String login = request.getParameter("login");
+            String password = request.getParameter("password");
+            User u = User.getUser(login, password);
+            
+            if( u != null){
+                session.setAttribute("login",u.getLogin());
+                session.setAttribute("name",u.getName());
+                session.setAttribute("role",u.getRole());
+                response.sendRedirect("home.jsp");
+            }else{
+                errorMessage = "Usuário ou senha inválido(s)";
+            }
+        }catch(Exception e){
+            errorMessage = e.getMessage();
+        }
+    }else if(request.getParameter("logoffForm")!=null){
+        session.removeAttribute("login");
+        session.removeAttribute("name");
+        session.removeAttribute("role");
+    }
 
+%>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -14,12 +40,15 @@
    <link rel="stylesheet" href="css/site.css">   
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   
+ 
 
 
 <title>JSP Page</title>
     </head>
 
-
+<%if(errorMessage != null){%>
+<h3 style="color:red"><%=errorMessage%></h3>
+<%}%>
 
 <div class="container py-5">
     <div class="row">
@@ -38,16 +67,16 @@
                             <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
                                 <div class="form-group">
                                     <label for="uname1">Usuário</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" name="uname1" id="uname1" required="">
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="login" id="uname1" required="">
                                     <div class="invalid-feedback">Login inválido</div>
                                 </div>
                                 <div class="form-group">
                                     <label>Senha</label>
-                                    <input type="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
+                                    <input type="password" name="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
                                     <div class="invalid-feedback">Senha inválida</div>
                                 </div>
                                 
-                                <button type="submit" class="btn btn-dark btn-block" id="btnLogin">Entrar</button>
+                                <button type="submit" class="btn btn-dark btn-block" name="loginForm" id="btnLogin">Entrar</button>
                             </form>
                         </div>
                         <!--/card-block-->

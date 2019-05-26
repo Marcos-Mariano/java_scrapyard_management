@@ -3,7 +3,13 @@
     Created on : 26/05/2019, 13:18:49
     Author     : Marcos
 --%>
-
+<%
+    if(request.getParameter("logoffForm")!=null){
+        session.removeAttribute("login");
+        session.removeAttribute("name");
+        session.removeAttribute("role");
+    }
+%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -22,7 +28,7 @@
     <%@include file ="WEB-INF/jspf/header.jspf"%>
     
     
-   cczxczxczczcz
+   Olá, <%= session.getAttribute("name") %>
        
     
     </body>
