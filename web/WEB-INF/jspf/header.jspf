@@ -20,13 +20,22 @@
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-dollar-sign"></i> Vendas</a>
         </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#"><b> Cadastro: </b></a>  
+        </li> 
+       
         
         <li class="nav-item">
-          <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> Fornecedores</a>
+          <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> Produtos</a>
         </li> 
         <li class="nav-item">
           <a class="nav-link" href="#"><i class="fas fa-industry"></i> Clientes</a>
         </li>
+        
+        <li class="nav-item">
+          <a class="nav-link" href="#"><i class="fas fa-user-friends"></i> Fornecedores</a>
+        </li> 
+     
         
       </ul>
       <ul class="navbar-nav nav-flex-icons">
