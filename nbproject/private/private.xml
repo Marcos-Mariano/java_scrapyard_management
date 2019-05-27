@@ -3,10 +3,34 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/User/Desktop/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/Cliente.java</file>
-            <file>file:/C:/Users/User/Desktop/java_scrapyard_management/web/WEB-INF/scripts/db_creation.sql</file>
-            <file>file:/C:/Users/User/Desktop/java_scrapyard_management/web/cliente/listar.jsp</file>
-            <file>file:/C:/Users/User/Desktop/java_scrapyard_management/web/clientes.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/WEB-INF/jspf/header.jspf</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/produtos/produtos.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/produtos/listar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/vendas/excluir.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/fornecedor/Fornecedor.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/cliente/Cliente.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/fornecedor/adicionar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/fornecedor/excluir.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/vendas/vendas.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/cliente/adicionar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/produtos/adicionar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/produtos/excluir.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/cliente/excluir.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/produtos/alterar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/css/site.css</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/cliente/listar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/cliente/alterar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/login.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/fornecedor/alterar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/Db.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/WEB-INF/scripts/db_creation.sql</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/fornecedor/listar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/src/java/br/com/fatecpg/jdbc/User.java</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/vendas/listar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/vendas/alterar.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/home.jsp</file>
+            <file>file:/C:/Users/Marcos/Desktop/Marcos/Projetos/java_scrapyard_management/web/vendas/adicionar.jsp</file>
         </group>
     </open-files>
 </project-private>
