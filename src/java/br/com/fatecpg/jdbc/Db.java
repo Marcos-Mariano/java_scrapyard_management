@@ -14,7 +14,7 @@ import java.sql.DriverManager;
  */
 public class Db {
     public static final String DRIVER = "org.apache.derby.jdbc.ClientDriver";
-    public static final String URL = "jdbc:derby://localhost:1527/scrap_mgmt";
+    public static final String URL = "jdbc:derby://localhost:1527/scrapyard";
     public static final String USER = "scrap";
     public static final String PASS = "scrap";
     
