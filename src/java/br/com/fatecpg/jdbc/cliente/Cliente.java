@@ -3,8 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatecpg.jdbc;
+package br.com.fatecpg.jdbc.cliente;
 
+import br.com.fatecpg.jdbc.Db;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;

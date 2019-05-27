@@ -1,40 +1,14 @@
 
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.Cliente"%>
+<%@page import="br.com.fatecpg.jdbc.cliente.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <link rel="stylesheet" type="text/css" href="../style.css">
-        <title>Listar Clientes</title>
-    </head>
-    
-    <body>
-        
-        <!-- MENU -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark nav-justify-content-center">
+<%@include file ="../WEB-INF/jspf/header.jspf"%>
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../index.jsp">Página Inicial</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="listar.jsp">Listar Clientes</a>
-                    </li>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="../fornecedor/listar.jsp">Listar Fornecedores</a>
-                    </li>
-                </ul>
-            </div>
-        </nav>
-        
-        <h1 class="titulo2">Lista - Clientes</h1>
+<h1 class="titulo2">Lista - Clientes</h1>
         <button type="button" class="btn btn-success" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Cliente</a></button>
   
         <table class="table table-dark table-sm" border="1">
