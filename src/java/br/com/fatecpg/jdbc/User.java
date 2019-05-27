@@ -18,7 +18,7 @@ public class User {
     private String role;
     private String name;
     private String login;
-    private long passwordHash;
+    private String passwordHash;
     
         public static User getUser(String login, String password) throws Exception{
         Connection con = Db.getConnection();
@@ -34,7 +34,7 @@ public class User {
                     rs.getString("ROLE"),
                     rs.getString("NAME"), 
                     rs.getString("LOGIN"),
-                    rs.getLong("PASSWORDHASH"));
+                    rs.getString("PASSWORD"));
         }
         
         else{
@@ -42,7 +42,7 @@ public class User {
         }
     }
 
-    public User(long id, String role, String name, String login, long passwordHash) {
+    public User(long id, String role, String name, String login, String passwordHash) {
         this.id = id;
         this.role = role;
         this.name = name;
@@ -82,11 +82,11 @@ public class User {
         this.login = login;
     }
 
-    public long getPasswordHash() {
+    public String getPasswordHash() {
         return passwordHash;
     }
 
-    public void setPasswordHash(long passwordHash) {
+    public void setPasswordHash(String passwordHash) {
         this.passwordHash = passwordHash;
     }
 }
