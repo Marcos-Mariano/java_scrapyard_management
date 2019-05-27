@@ -22,7 +22,7 @@
   <tbody>
             
            
-
+c
             <% for(Cliente c: Cliente.getList()){ %>
                 <% int index = Cliente.getList().indexOf(c); %>
                 <tr>

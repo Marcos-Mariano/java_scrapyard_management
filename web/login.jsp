@@ -72,12 +72,12 @@
                             <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
                                 <div class="form-group">
                                     <label for="uname1">Usuário</label>
-                                    <input type="text" class="form-control form-control-lg rounded-0" name="login" id="uname1" required="">
+                                    <input type="text" class="form-control form-control-lg rounded-0" name="login" id="uname1" required>
                                    
                                 </div>
                                 <div class="form-group">
                                     <label>Senha</label>
-                                    <input type="password" name="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
+                                    <input type="password" name="password" class="form-control form-control-lg rounded-0" id="pwd1" required autocomplete="new-password">
                                     
                                 </div>
                                 
