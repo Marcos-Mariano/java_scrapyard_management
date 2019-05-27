@@ -51,11 +51,11 @@
           <a class="nav-link" href="produtos.jsp"><i class="fas fa-user-friends"></i> Produtos</a>
         </li> 
         <li class="nav-item">
-          <a class="nav-link" href="Clientes.jsp"><i class="fas fa-industry"></i> Clientes</a>
+            <a class="nav-link" href="/scrapyard_management/cliente/listar.jsp"><i class="fas fa-industry"></i> Clientes</a>
         </li>
         
         <li class="nav-item">
-          <a class="nav-link" href="fornecedores.jsp"><i class="fas fa-user-friends"></i> Fornecedores</a>
+            <a class="nav-link" href="../../fornecedor/listar.jsp"><i class="fas fa-user-friends"></i> Fornecedores</a>
         </li> 
      
         

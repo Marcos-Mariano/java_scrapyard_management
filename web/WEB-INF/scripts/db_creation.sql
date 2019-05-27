@@ -47,6 +47,9 @@ CREATE TABLE CLIENTES(
 
 
 INSERT INTO USUARIOS VALUES(default, 'ADMIN', 'Administrador', 'admin','admin');
+INSERT INTO CLIENTES VALUES(default, 'marcelo');
+
+
 
 
 
