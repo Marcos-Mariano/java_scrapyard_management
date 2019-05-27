@@ -73,7 +73,7 @@
                                 <div class="form-group">
                                     <label for="uname1">Usuário</label>
                                     <input type="text" class="form-control form-control-lg rounded-0" name="login" id="uname1" required="">
-                                    <div class="invalid-feedback">Login inválido</div>
+                                   
                                 </div>
                                 <div class="form-group">
                                     <label>Senha</label>

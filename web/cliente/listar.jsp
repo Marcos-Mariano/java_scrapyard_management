@@ -8,16 +8,19 @@
 
 
 
-<h1 class="titulo2">Lista - Clientes</h1>
-        <button type="button" class="btn btn-success" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Cliente</a></button>
-  
-        <table class="table table-dark table-sm" border="1">
-            <tr>
-                <th>Índice</th>
-                <th>Nome</th>
-         
-                <th>Comandos</th>
-            </tr>
+<h1 class="text-center">Cadastro de Clientes</h1>
+        
+        <table class="table text-center table-striped ">
+  <thead class="thead-dark text-center">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Nome</th>
+     
+      <th scope="col">Opções</th>
+    </tr>
+  </thead>
+  <tbody>
+            
            
 
             <% for(Cliente c: Cliente.getList()){ %>
@@ -27,13 +30,14 @@
                     <td><%=c.getNome()%></td>
                         
                     <td>
-                        <a href="alterar.jsp?index=<%=index%>">       Alterar    |</a>
-                        <a href="excluir.jsp?index=<%=index%>">   Excluir</a>    
+                        <a href="alterar.jsp?index=<%=index%>">Alterar</a>
+                        <a href="excluir.jsp?index=<%=index%>">Excluir</a>    
                     </td>
                 </tr>
             <% } %>
         </table>
-        <hr/>
+       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Novo</a></button>
+  
         
     </body>
     

@@ -3,4 +3,20 @@
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
 
-cliente adicionar
+<h1 class="text-center">Cadastro de Clientes</h1>
+<form>
+<div class="form-content ">
+  <div class="form-group ">
+    <label for="exampleInputEmail1">ID</label>
+      <input type="number" name="txtid" min="1" value="" readonly class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Nome</label>
+      <input type="text" name="txtnm" maxlength="100" pattern="" value="" class="form-control">
+  </div>
+  <div class="text-center">
+    <input class="btn btn-primary mr-2" type="submit" value="Enviar"/>
+    <input class="btn btn-danger mr-2" type="reset" value="Limpar"/>
+    <a href="listar.jsp" class="btn btn-info">Voltar</a>
+  </div></div>
+    </form>
