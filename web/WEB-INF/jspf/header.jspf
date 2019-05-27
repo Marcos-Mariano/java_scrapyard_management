@@ -19,7 +19,7 @@
    
    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
   
-<link href="../../css/site.css" rel="stylesheet" type="text/css"/>
+
 
 
 <style>
@@ -48,9 +48,7 @@
         <li class="nav-item">
           <a class="nav-link" href="/scrapyard_management/vendas/listar.jsp"><i class="fas fa-dollar-sign"></i> Vendas</a>
         </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#"><b> Cadastro: </b></a>  
-        </li> 
+        
        
         
         <li class="nav-item">
@@ -68,10 +66,11 @@
       </ul>
       <ul class="navbar-nav nav-flex-icons">
         <li class="nav-item">
-            <a class="nav-link" href="login.jsp" name="logoffForm"><i class="fas fa-sign-out-alt"></i> Sair</a>
+            <a class="nav-link" href="/scrapyard_management/login.jsp" name="logoffForm"><i class="fas fa-sign-out-alt"></i> Sair</a>
         </li>
       </ul>
     </div>
+   
   </nav>
 
 </header>

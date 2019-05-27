@@ -17,7 +17,7 @@
                 session.setAttribute("name",u.getName());
                 session.setAttribute("role",u.getRole());
                 response.sendRedirect("home.jsp");
-            }else{
+            }else{ 
                 errorMessage = "Usuário ou senha inválido(s)";
             }
         }catch(Exception e){
@@ -43,12 +43,12 @@
  
 
 
-<title>JSP Page</title>
+<title>Scrapy - Login</title>
     </head>
 
-<%if(errorMessage != null){%>
-<h3 style="color:red"><%=errorMessage%></h3>
-<%}%>
+
+
+
 
 <div class="container py-5">
     <div class="row">
@@ -63,6 +63,11 @@
                         <div class="card-header">
                             <h3 class="mb-0 text-center">Entre com seus dados!</h3>
                         </div>
+                        <%if(errorMessage != null){%>
+<div class="alert alert-danger" role="alert">
+    <center> Usuário ou Senha Inválidos!</center>
+</div>
+<%}%>
                         <div class="card-body">
                             <form class="form" role="form" autocomplete="off" id="formLogin" novalidate="" method="POST">
                                 <div class="form-group">
@@ -73,7 +78,7 @@
                                 <div class="form-group">
                                     <label>Senha</label>
                                     <input type="password" name="password" class="form-control form-control-lg rounded-0" id="pwd1" required="" autocomplete="new-password">
-                                    <div class="invalid-feedback">Senha inválida</div>
+                                    
                                 </div>
                                 
                                 <button type="submit" class="btn btn-dark btn-block" name="loginForm" id="btnLogin">Entrar</button>
@@ -96,20 +101,3 @@
 </div>
 <!--/container-->
 
-<script> 
- $("#btnLogin").click(function(event) {
-
-    //Fetch form to apply custom Bootstrap validation
-    var form = $("#formLogin")
-
-    if (form[0].checkValidity() === false) {
-      event.preventDefault()
-      event.stopPropagation()
-    }
-    
-    form.addClass('was-validated');
-  });
-
-
-
-</script>
