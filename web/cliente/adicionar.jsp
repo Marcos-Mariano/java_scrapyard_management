@@ -7,8 +7,9 @@
 
  
           <% int i = 0;
-              for(Cliente c: Cliente.getList()){ %>
-                <% int index = Cliente.getList().indexOf(c); 
+          Cliente cliente = new Cliente();
+              for(Cliente c: cliente.getList()){ %>
+                <% int index = cliente.getList().indexOf(c); 
                 i++;
 
 
@@ -18,7 +19,7 @@
 
 
 <h1 class="text-center">Cadastro de Clientes</h1>
-<form>
+<form action="listar.jsp">
 <div class="form-content ">
   <div class="form-group ">
     <label for="exampleInputEmail1">ID</label>
@@ -26,11 +27,11 @@
   </div>
   <div class="form-group">
     <label for="exampleInputEmail1">Nome</label>
-      <input type="text" name="txtnm" maxlength="100" pattern="" value="" class="form-control">
+      <input type="text" name="txtnm" maxlength="100" value="" class="form-control">
   </div>
   <div class="text-center">
-    <input class="btn btn-primary mr-2" type="submit" value="Enviar"/>
-    <input class="btn btn-danger mr-2" type="reset" value="Limpar"/>
+    <input class="btn btn-primary mr-2" type="submit" name="adicionarCliente" value="Enviar"/>
+    <input class="btn btn-danger mr-2" type="reset" name="adicionarCliente" value="Limpar"/>
     <a href="listar.jsp" class="btn btn-info">Voltar</a>
   </div></div>
     </form>

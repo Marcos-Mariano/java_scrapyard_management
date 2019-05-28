@@ -9,17 +9,16 @@
 
 
 
-           
-
-            <% for(Cliente c: Cliente.getList()){ %>
-                <% int index = Cliente.getList().indexOf(c); %>
+        <table>
+            <%Cliente cliente = new Cliente();%>
+            <% for(Cliente c: cliente.getList()){ %>
                 <tr>
                     <td><%=c.getId()%></td>
                     <td><%=c.getNome()%></td>
                         
                     <td>
-                        <a href="alterar.jsp?index=<%=index%>">Alterar</a>
-                        <a href="excluir.jsp?index=<%=index%>">Excluir</a>    
+                        <a href="alterar.jsp?index=<%=c.getId()%>">Alterar</a>
+                        <a href="excluir.jsp?index=<%=c.getId()%>&name=<%=c.getNome()%>">Excluir</a>    
                     </td>
                 </tr>
             <% } %>
@@ -37,17 +36,17 @@
 
 <%
     if(request.getParameter("adicionarCliente")!=null){
-        if(request.getParameter("adicionarCliente").equals("Sim")){
+        if(request.getParameter("adicionarCliente").equals("Enviar")){
             
-            Cliente.incluirCliente(request.getParameter("nomeCliente"));
+            Cliente.incluirCliente(request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }
     
     if(request.getParameter("alterarCliente")!=null){
-        if(request.getParameter("alterarCliente").equals("Sim")){
+        if(request.getParameter("alterarCliente").equals("Alterar")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.alterarCliente(index, request.getParameter("nomeCliente"));
+            Cliente.alterarCliente(index, request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }    

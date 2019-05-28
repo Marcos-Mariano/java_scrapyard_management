@@ -32,17 +32,21 @@ public class Cliente {
 
     }
     
+    public Cliente (){
         
-    public static ArrayList<Cliente> getList() throws Exception{
+    }
+    
+        
+    public ArrayList<Cliente> getList() throws Exception{
         Connection con = Db.getConnection();
         String SQL = "select * from clientes";
         PreparedStatement st = con.prepareStatement(SQL);
         ResultSet rs = st.executeQuery();
          
+        ArrayList<Cliente> lista = new ArrayList<>();
         while(rs.next()){
-            lista = new ArrayList<>();
-            Cliente c = new Cliente
-                    (rs.getInt("ID"),
+            Cliente c = new Cliente(
+                    rs.getInt("ID"), 
                     rs.getString("NAME"));
             
             lista.add(c);
@@ -56,11 +60,10 @@ public class Cliente {
     
     public static void removerCliente(int id)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "delete * from clientes where id = ?";
+        String SQL = "delete from clientes where id = ?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setInt(1, id);
-        ResultSet rs = st.executeQuery();
-        rs.close();
+        st.executeUpdate();
         st.close();
         con.close();
     }
@@ -73,8 +76,7 @@ public class Cliente {
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
         st.setInt(2, id);
-        ResultSet rs = st.executeQuery();
-        rs.close();
+        st.executeUpdate();
         st.close();
         con.close();
     }
