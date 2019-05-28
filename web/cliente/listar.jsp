@@ -52,7 +52,7 @@
     }    
     
     if(request.getParameter("excluirCliente")!=null){
-        if(request.getParameter("excluirCliente").equals("Sim")){
+        if(request.getParameter("excluirCliente").equals("Excluir")){
             int index = Integer.parseInt(request.getParameter("index"));
             Cliente.removerCliente(index);
         }
