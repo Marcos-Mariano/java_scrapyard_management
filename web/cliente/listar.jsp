@@ -8,25 +8,13 @@
 
 
 
-<h1 class="text-center">Cadastro de Clientes</h1>
-        
-        <table class="table text-center table-striped ">
-  <thead class="thead-dark text-center">
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Nome</th>
-     
-      <th scope="col">Opções</th>
-    </tr>
-  </thead>
-  <tbody>
-            
+
            
-c
+
             <% for(Cliente c: Cliente.getList()){ %>
                 <% int index = Cliente.getList().indexOf(c); %>
                 <tr>
-                    <td><%=index%></td>
+                    <td><%=c.getId()%></td>
                     <td><%=c.getNome()%></td>
                         
                     <td>
