@@ -1,6 +1,6 @@
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.produtos.Produtos"%>
+<%@page import="br.com.fatecpg.jdbc.produtos.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>

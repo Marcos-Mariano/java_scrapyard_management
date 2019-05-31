@@ -1,18 +1,21 @@
 
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.produtos.Produtos"%>
+<%@page import="br.com.fatecpg.jdbc.produtos.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
 
 
 
-<h2>Produtos</h2>
+<h2>Cadastro de Produtos</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
             <th> Nome </th>
+            <th> Valor </th>
+            <th> Unidade de Medida </th>
+            <th> Quantidade </th>
             <th>Comandos</th>
             </thead>
             
@@ -21,6 +24,9 @@
                 <tr>
                     <td><%=c.getId()%></td>
                     <td><%=c.getNome()%></td>
+                    <td>R$ <%=c.getValor()%> (un)</td>
+                    <td><%=c.getUnidade()%></td>
+                    <td><%=c.getQuantidade()%></td>
                         
                     <td>
                         <a href="alterar.jsp?index=<%=c.getId()%>">Alterar</a>

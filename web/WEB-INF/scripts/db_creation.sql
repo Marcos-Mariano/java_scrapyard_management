@@ -48,6 +48,7 @@ CREATE TABLE CLIENTES(
 
 INSERT INTO USUARIOS VALUES(default, 'ADMIN', 'Administrador', 'admin','admin');
 INSERT INTO CLIENTES VALUES(default, 'marcelo');
+INSERT INTO PRODUTOS VALUES(default, 'Cobre', '200', '3','kg');
 
 
 

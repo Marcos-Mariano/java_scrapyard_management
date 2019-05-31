@@ -1,6 +1,6 @@
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.produtos.Produtos"%>
+<%@page import="br.com.fatecpg.jdbc.produtos.Produto"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
@@ -8,7 +8,7 @@
  
           
 
-<h1 class="text-center">Cadastro de Produtos</h1>
+<h1 class="text-center">Adicionar Produto</h1>
 <form action="listar.jsp">
 <div class="form-content ">
   <div class="form-group ">
