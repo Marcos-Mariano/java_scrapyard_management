@@ -8,7 +8,7 @@
 
 
 
-<h2>Clientes</h2>
+<h2>Produtos</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
@@ -16,8 +16,8 @@
             <th>Comandos</th>
             </thead>
             
-            <%Cliente cliente = new Cliente();%>
-            <% for(Cliente c: cliente.getList()){ %>
+            <%Produto produto = new Produto();%>
+            <% for(Produto c: produto.getList()){ %>
                 <tr>
                     <td><%=c.getId()%></td>
                     <td><%=c.getNome()%></td>
@@ -41,26 +41,26 @@
 </html>
 
 <%
-    if(request.getParameter("adicionarCliente")!=null){
-        if(request.getParameter("adicionarCliente").equals("Enviar")){
+    if(request.getParameter("adicionarProduto")!=null){
+        if(request.getParameter("adicionarProduto").equals("Enviar")){
             
-            Cliente.incluirCliente(request.getParameter("txtnm"));
+            Produto.incluirProduto(request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }
     
-    if(request.getParameter("alterarCliente")!=null){
-        if(request.getParameter("alterarCliente").equals("Alterar")){
+    if(request.getParameter("alterarProduto")!=null){
+        if(request.getParameter("alterarProduto").equals("Alterar")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.alterarCliente(index, request.getParameter("txtnm"));
+            Produto.alterarProduto(index, request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }    
     
-    if(request.getParameter("excluirCliente")!=null){
-        if(request.getParameter("excluirCliente").equals("Excluir")){
+    if(request.getParameter("excluirProduto")!=null){
+        if(request.getParameter("excluirProduto").equals("Excluir")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.removerCliente(index);
+            Produto.removerProduto(index);
         }
         response.sendRedirect(request.getRequestURI());
     }
