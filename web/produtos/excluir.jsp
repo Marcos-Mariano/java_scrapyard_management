@@ -1,6 +1,6 @@
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.cliente.Cliente"%>
+<%@page import="br.com.fatecpg.jdbc.produtos.Produtos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
@@ -9,7 +9,7 @@
 <%String name = request.getParameter("name");%>
 
 
-<h1 class="text-center">Cadastro de Clientes</h1>
+<h1 class="text-center">Excluir Produtos</h1>
 <form action="listar.jsp">
 <div class="form-content ">
   <div class="form-group ">
@@ -21,7 +21,7 @@
       <input type="text" name="txtnm" maxlength="100" placeholder="<%=name%>" value="" readonly class="form-control">
   </div>
   <div class="text-center">
-    <input class="btn btn-primary mr-2" type="submit" name="excluirCliente" value="Excluir"/>
+    <input class="btn btn-primary mr-2" type="submit" name="excluirProduto" value="Excluir"/>
     <input type="hidden" name="index" value="<%=i%>">
     <a href="listar.jsp" class="btn btn-info">Voltar</a>
   </div></div>
