@@ -1,7 +1,7 @@
 
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.cliente.Cliente"%>
+<%@page import="br.com.fatecpg.jdbc.produtos.Produtos"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
@@ -29,7 +29,7 @@
                 </tr>
             <% } %>
         </table>
-       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Novo</a></button>
+       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddProduto"><a href="adicionar.jsp">Adicionar Novo</a></button>
   
         
     </body>
