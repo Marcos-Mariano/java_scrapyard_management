@@ -28,8 +28,28 @@
     <%@include file ="WEB-INF/jspf/header.jspf"%>
     
     
-   Olá, <%= session.getAttribute("name") %>
+   
        
-    
+    <center>
+   <table>
+       
+       <tr>
+           <td><a href="vendas/listar.jsp"><img src="images/vendas.png" width="300px"</a></td>
+           <td><a href="produtos/listar.jsp"><img src="images/produtos.png" width="300px"</a></td>
+           
+           <td></td>
+       </tr>
+        
+       <tr>
+           <td><a href="cliente/listar.jsp"><img src="images/clientes.png" width="300px"</a></td>
+           <td><a href="fornecedor/listar.jsp"><img src="images/fornecedores.png" width="300px"</a></td>
+           
+           <td></td>
+       </tr>
+       
+       
+   </table>
+   </center>
+   
     </body>
 </html>
