@@ -5,13 +5,10 @@
  */
 package br.com.fatecpg.jdbc.fornecedor;
 
-import br.com.fatecpg.jdbc.cliente.*;
 import br.com.fatecpg.jdbc.Db;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.Statement;
 import java.util.ArrayList;
 
 /**
@@ -40,7 +37,7 @@ public class Fornecedor {
         
     public ArrayList<Fornecedor> getList() throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "select * from clientes";
+        String SQL = "select * from fornecedores";
         PreparedStatement st = con.prepareStatement(SQL);
         ResultSet rs = st.executeQuery();
          
@@ -59,9 +56,9 @@ public class Fornecedor {
         return lista;
     }
     
-    public static void removerCliente(int id)throws Exception{
+    public static void removerFornecedor(int id)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "delete from clientes where id = ?";
+        String SQL = "delete from fornecedores where id = ?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setInt(1, id);
         st.executeUpdate();
@@ -69,9 +66,9 @@ public class Fornecedor {
         con.close();
     }
     
-    public static void alterarCliente(int id,String nome)throws Exception{
+    public static void alterarFornecedor(int id,String nome)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "update clientes "
+        String SQL = "update fornecedores "
                 + "set name=? "
                 + "where id=?";
         PreparedStatement st = con.prepareStatement(SQL);
@@ -82,9 +79,9 @@ public class Fornecedor {
         con.close();
     }
     
-    public static void incluirCliente(String nome)throws Exception{
+    public static void incluirFornecedor(String nome)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "insert into clientes values(default,?)";
+        String SQL = "insert into fornecedores values(default,?)";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
         st.executeUpdate();

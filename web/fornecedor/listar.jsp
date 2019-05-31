@@ -1,14 +1,14 @@
 
 
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.cliente.Cliente"%>
+<%@page import="br.com.fatecpg.jdbc.fornecedor.Fornecedor"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
 
 
 
-<h2>Clientes</h2>
+<h2>Cadastro de Fornecedores</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
@@ -16,8 +16,8 @@
             <th>Comandos</th>
             </thead>
             
-            <%Cliente cliente = new Cliente();%>
-            <% for(Cliente c: cliente.getList()){ %>
+            <%Fornecedor fornecedor = new Fornecedor();%>
+            <% for(Fornecedor c: fornecedor.getList()){ %>
                 <tr>
                     <td><%=c.getId()%></td>
                     <td><%=c.getNome()%></td>
@@ -29,7 +29,7 @@
                 </tr>
             <% } %>
         </table>
-       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Novo</a></button>
+       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddFornecedor"><a href="adicionar.jsp">Adicionar Novo</a></button>
   
         
     </body>
@@ -41,26 +41,26 @@
 </html>
 
 <%
-    if(request.getParameter("adicionarCliente")!=null){
-        if(request.getParameter("adicionarCliente").equals("Enviar")){
+    if(request.getParameter("adicionarFornecedor")!=null){
+        if(request.getParameter("adicionarFornecedor").equals("Enviar")){
             
-            Cliente.incluirCliente(request.getParameter("txtnm"));
+            Fornecedor.incluirFornecedor(request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }
     
-    if(request.getParameter("alterarCliente")!=null){
-        if(request.getParameter("alterarCliente").equals("Alterar")){
+    if(request.getParameter("alterarFornecedor")!=null){
+        if(request.getParameter("alterarFornecedor").equals("Alterar")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.alterarCliente(index, request.getParameter("txtnm"));
+            Fornecedor.alterarFornecedor(index, request.getParameter("txtnm"));
         }
         response.sendRedirect(request.getRequestURI());
     }    
     
-    if(request.getParameter("excluirCliente")!=null){
-        if(request.getParameter("excluirCliente").equals("Excluir")){
+    if(request.getParameter("excluirFornecedor")!=null){
+        if(request.getParameter("excluirFornecedor").equals("Excluir")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.removerCliente(index);
+            Fornecedor.removerFornecedor(index);
         }
         response.sendRedirect(request.getRequestURI());
     }
