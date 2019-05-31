@@ -8,8 +8,14 @@
 
 
 
-
-        <table>
+<h2>Clientes</h2>
+<table class="table table-dark table-striped text-center">
+            <thead>
+            <th> #</th>
+            <th> Nome </th>
+            <th>Comandos</th>
+            </thead>
+            
             <%Cliente cliente = new Cliente();%>
             <% for(Cliente c: cliente.getList()){ %>
                 <tr>

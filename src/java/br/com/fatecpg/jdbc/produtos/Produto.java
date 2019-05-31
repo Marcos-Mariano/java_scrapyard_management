@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.fatecpg.jdbc.fornecedor;
+package br.com.fatecpg.jdbc.produtos;
 
 import br.com.fatecpg.jdbc.cliente.*;
 import br.com.fatecpg.jdbc.Db;
@@ -18,35 +18,35 @@ import java.util.ArrayList;
  *
  * @author User
  */
-public class Fornecedor {
+public class Produto {
 
     private int id;
     private String nome;
-    private static ArrayList<Fornecedor> lista;
+    private static ArrayList<Produto> lista;
 
     
 
-    public Fornecedor(int id,String nome) {
+    public Produto(int id,String nome) {
         
         this.id = id;
         this.nome = nome;
 
     }
     
-    public Fornecedor (){
+    public Produto (){
         
     }
     
         
-    public ArrayList<Fornecedor> getList() throws Exception{
+    public ArrayList<Produto> getList() throws Exception{
         Connection con = Db.getConnection();
         String SQL = "select * from clientes";
         PreparedStatement st = con.prepareStatement(SQL);
         ResultSet rs = st.executeQuery();
          
-        ArrayList<Fornecedor> lista = new ArrayList<>();
+        ArrayList<Produto> lista = new ArrayList<>();
         while(rs.next()){
-            Fornecedor c = new Fornecedor(
+            Produto c = new Produto(
                     rs.getInt("ID"), 
                     rs.getString("NAME"));
             
