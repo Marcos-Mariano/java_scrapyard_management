@@ -8,7 +8,7 @@
  
           
 
-<h1 class="text-center">Cadastro de Vendas</h1>
+<h1 class="text-center">Cadastro de Produtos</h1>
 <form action="listar.jsp">
 <div class="form-content ">
   <div class="form-group ">
@@ -24,12 +24,17 @@
       <input type="text" name="txtvalor" maxlength="100" value="" class="form-control" required >
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Vendedor</label>
-      <input type="text" name="txtvendedor" maxlength="100" value="" class="form-control" required >
+    <label for="exampleInputEmail1">Quantidade</label>
+      <input type="text" name="txtquantidade" maxlength="100" value="" class="form-control" required >
+  </div>
+    
+    <div class="form-group">
+    <label for="exampleInputEmail1">Unidade</label>
+      <input type="text" name="txtunidade" maxlength="100" value="" class="form-control" required >
   </div>
   <div class="text-center">
-    <input class="btn btn-primary mr-2" type="submit" name="adicionarVenda" value="Enviar"/>
-    <input class="btn btn-danger mr-2" type="reset" name="adicionarVenda" value="Limpar"/>
+    <input class="btn btn-primary mr-2" type="submit" name="adicionarProduto" value="Enviar"/>
+    <input class="btn btn-danger mr-2" type="reset" name="adicionarProduto" value="Limpar"/>
     <a href="listar.jsp" class="btn btn-info">Voltar</a>
   </div></div>
     </form>

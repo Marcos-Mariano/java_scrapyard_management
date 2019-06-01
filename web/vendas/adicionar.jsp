@@ -16,7 +16,7 @@
       <input type="number" name="txtid" min="1" value="" placeholder="Auto Gerado" readonly class="form-control">
   </div>
   <div class="form-group">
-    <label for="exampleInputEmail1">Nome</label>
+    <label for="exampleInputEmail1">Produto</label>
       <input type="text" name="txtnm" maxlength="100" value="" class="form-control" required >
   </div>
   <div class="form-group">

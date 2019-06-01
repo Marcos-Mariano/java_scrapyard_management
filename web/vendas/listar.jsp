@@ -8,12 +8,13 @@
 
 
 
-<h2>VENDAS</h2>
+<h2>Vendas</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
-            <th> Valor </th>
+           
             <th> Produto </th>
+             <th> Valor </th>
             <th> Vendedor </th>
             <th>Comandos</th>
             </thead>
@@ -22,8 +23,9 @@
             <% for(Venda v: venda.getList()){ %>
                 <tr>
                     <td><%=v.getId()%></td>
-                    <td><%=v.getNome()%></td>
-                    <td><%=v.getValor()%></td>
+                     <td><%=v.getValor()%></td>
+                    <td>R$  <%=v.getNome()%></td>
+                   
                     <td><%=v.getVendedor()%></td>
                         
                     <td>

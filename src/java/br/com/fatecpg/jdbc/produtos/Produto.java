@@ -88,7 +88,7 @@ public class Produto {
     public static void alterarProduto(int id,String nome,String valor, String quantidade, String unidade)throws Exception{
         Connection con = Db.getConnection();
         String SQL = "update produtos "
-                + "set nomeproduto=?,valor=?,quantidade=?, unidade=? "
+                + "set nomeproduto=?,valor=?,quantidade=?, unidademedida=? "
                 + "where id=?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);

@@ -8,13 +8,14 @@
 
 
 
-<h2>VENDAS</h2>
+<h2>Cadastro de Produtos</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
+            <th> Nome </th>
             <th> Valor </th>
-            <th> Produto </th>
-            <th> Vendedor </th>
+            <th> Quantidade </th>
+            <th> Unidade </th>
             <th>Comandos</th>
             </thead>
             
@@ -25,10 +26,11 @@
                     <td><%=v.getNome()%></td>
                     <td><%=v.getValor()%></td>
                     <td><%=v.getQuantidade()%></td>
+                    <td><%=v.getUnidade()%></td>
                         
                     <td>
-                        <a href="alterar.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getQuantidade()%>">Alterar</a>
-                        <a href="excluir.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getQuantidade()%>">Excluir</a>    
+                        <a href="alterar.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&quantidade=<%=v.getQuantidade()%>&unidade=<%=v.getUnidade()%>">Alterar</a>
+                        <a href="excluir.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&quantidade=<%=v.getQuantidade()%>&unidade=<%=v.getUnidade()%>">Excluir</a>    
                     </td>
                 </tr>
             <% } %>
