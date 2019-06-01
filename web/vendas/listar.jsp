@@ -8,7 +8,7 @@
 
 
 
-<h2>Clientes</h2>
+<h2>VENDAS</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>

@@ -75,7 +75,7 @@ public class Venda {
     public static void alterarVenda(int id,String nome,String valor,String vendedor)throws Exception{
         Connection con = Db.getConnection();
         String SQL = "update vendas "
-                + "set name=?,valor=?,vendedor=? "
+                + "set nomeproduto=?,valor=?,vendedor=? "
                 + "where id=?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);

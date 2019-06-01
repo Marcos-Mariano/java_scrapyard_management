@@ -49,8 +49,11 @@
 <%
     if(request.getParameter("adicionarProduto")!=null){
         if(request.getParameter("adicionarProduto").equals("Enviar")){
-            
-            Produto.incluirProduto(request.getParameter("txtnm"));
+            String nome = request.getParameter("txtnm");
+            String valor = request.getParameter("txtnm");
+            String unidadeMedida = request.getParameter("txtmedida");
+            String quant = request.getParameter("txtqtd");
+            Produto.incluirProduto();
         }
         response.sendRedirect(request.getRequestURI());
     }

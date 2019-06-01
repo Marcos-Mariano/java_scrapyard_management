@@ -10,7 +10,7 @@
 <%String valor = request.getParameter("valor");%>
 <%String vendedor = request.getParameter("vendedor");%>
 
-<h1 class="text-center">Exlcusão de Vendas</h1>
+<h1 class="text-center">Exclusão de Vendas</h1>
 <form action="listar.jsp">
 <div class="form-content ">
   <div class="form-group ">
