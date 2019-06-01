@@ -1,7 +1,7 @@
 
 
+<%@page import="br.com.fatecpg.jdbc.vendas.Venda"%>
 <%@page import="java.util.ArrayList"%>
-<%@page import="br.com.fatecpg.jdbc.cliente.Cliente"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
@@ -12,19 +12,23 @@
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
-            <th> Nome </th>
+            <th> Valor </th>
+            <th> Produto </th>
+            <th> Vendedor </th>
             <th>Comandos</th>
             </thead>
             
-            <%Cliente cliente = new Cliente();%>
-            <% for(Cliente c: cliente.getList()){ %>
+            <%Venda venda = new Venda();%>
+            <% for(Venda v: venda.getList()){ %>
                 <tr>
-                    <td><%=c.getId()%></td>
-                    <td><%=c.getNome()%></td>
+                    <td><%=v.getId()%></td>
+                    <td><%=v.getNome()%></td>
+                    <td><%=v.getValor()%></td>
+                    <td><%=v.getVendedor()%></td>
                         
                     <td>
-                        <a href="alterar.jsp?index=<%=c.getId()%>">Alterar</a>
-                        <a href="excluir.jsp?index=<%=c.getId()%>&name=<%=c.getNome()%>">Excluir</a>    
+                        <a href="alterar.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getVendedor()%>">Alterar</a>
+                        <a href="excluir.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getVendedor()%>">Excluir</a>    
                     </td>
                 </tr>
             <% } %>
@@ -41,26 +45,32 @@
 </html>
 
 <%
-    if(request.getParameter("adicionarCliente")!=null){
-        if(request.getParameter("adicionarCliente").equals("Enviar")){
+    if(request.getParameter("adicionarVenda")!=null){
+        if(request.getParameter("adicionarVenda").equals("Enviar")){
+            String nomeProduto = request.getParameter("txtnm");
+            String valor = request.getParameter("txtvalor");
+            String vendedor = request.getParameter("txtvendedor");
             
-            Cliente.incluirCliente(request.getParameter("txtnm"));
+            Venda.incluirVenda(nomeProduto,valor,vendedor);
         }
         response.sendRedirect(request.getRequestURI());
     }
     
-    if(request.getParameter("alterarCliente")!=null){
-        if(request.getParameter("alterarCliente").equals("Alterar")){
+    if(request.getParameter("alterarVenda")!=null){
+        if(request.getParameter("alterarVenda").equals("Alterar")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.alterarCliente(index, request.getParameter("txtnm"));
+            String nomeProduto = request.getParameter("txtnm");
+            String valor = request.getParameter("txtvalor");
+            String vendedor = request.getParameter("txtvendedor");
+            Venda.alterarVenda(index,nomeProduto,valor,vendedor);
         }
         response.sendRedirect(request.getRequestURI());
     }    
     
-    if(request.getParameter("excluirCliente")!=null){
-        if(request.getParameter("excluirCliente").equals("Excluir")){
+    if(request.getParameter("excluirVenda")!=null){
+        if(request.getParameter("excluirVenda").equals("Excluir")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Cliente.removerCliente(index);
+            Venda.removerVenda(index);
         }
         response.sendRedirect(request.getRequestURI());
     }

@@ -22,16 +22,17 @@ public class Venda {
 
     private int id;
     private String nome;
+    private String valor;
+    private String vendedor;
     private static ArrayList<Venda> lista;
 
-    
-
-    public Venda(int id,String nome) {
-        
+    public Venda(int id, String nome, String valor, String vendedor) {
         this.id = id;
         this.nome = nome;
-
+        this.valor = valor;
+        this.vendedor = vendedor;
     }
+
     
     public Venda (){
         
@@ -40,7 +41,7 @@ public class Venda {
         
     public ArrayList<Venda> getList() throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "select * from clientes";
+        String SQL = "select * from vendas";
         PreparedStatement st = con.prepareStatement(SQL);
         ResultSet rs = st.executeQuery();
          
@@ -48,7 +49,9 @@ public class Venda {
         while(rs.next()){
             Venda c = new Venda(
                     rs.getInt("ID"), 
-                    rs.getString("NAME"));
+                    rs.getString("NOMEPRODUTO"),
+                    rs.getString("VALOR"),
+                    rs.getString("VENDEDOR"));
             
             lista.add(c);
         }
@@ -59,9 +62,9 @@ public class Venda {
         return lista;
     }
     
-    public static void removerCliente(int id)throws Exception{
+    public static void removerVenda(int id)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "delete from clientes where id = ?";
+        String SQL = "delete from vendas where id = ?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setInt(1, id);
         st.executeUpdate();
@@ -69,24 +72,28 @@ public class Venda {
         con.close();
     }
     
-    public static void alterarCliente(int id,String nome)throws Exception{
+    public static void alterarVenda(int id,String nome,String valor,String vendedor)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "update clientes "
-                + "set name=? "
+        String SQL = "update vendas "
+                + "set name=?,valor=?,vendedor=? "
                 + "where id=?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
-        st.setInt(2, id);
+        st.setString(2, valor);
+        st.setString(3, vendedor);
+        st.setInt(4, id);
         st.executeUpdate();
         st.close();
         con.close();
     }
     
-    public static void incluirCliente(String nome)throws Exception{
+    public static void incluirVenda(String nome,String valor,String vendedor)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "insert into clientes values(default,?)";
+        String SQL = "insert into vendas values(default,?,?,?)";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
+        st.setString(2, valor);
+        st.setString(3, vendedor);
         st.executeUpdate();
         st.close();
         con.close();
@@ -106,6 +113,30 @@ public class Venda {
 
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public String getVendedor() {
+        return vendedor;
+    }
+
+    public void setVendedor(String vendedor) {
+        this.vendedor = vendedor;
+    }
+
+    public static ArrayList<Venda> getLista() {
+        return lista;
+    }
+
+    public static void setLista(ArrayList<Venda> lista) {
+        Venda.lista = lista;
     }
 
     

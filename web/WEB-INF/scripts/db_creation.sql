@@ -22,7 +22,7 @@
 
 
 
-
+drop table usuarios;
  CREATE TABLE USUARIOS(
     ID BIGINT NOT NULL PRIMARY KEY GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
    , ROLE VARCHAR (200) NOT NULL
@@ -48,7 +48,7 @@ CREATE TABLE CLIENTES(
 
 INSERT INTO USUARIOS VALUES(default, 'ADMIN', 'Administrador', 'admin','admin');
 INSERT INTO CLIENTES VALUES(default, 'marcelo');
-INSERT INTO PRODUTOS VALUES(default, 'Cobre', '200', '3','kg');
+INSERT INTO PRODUTOS VALUES(default, 'Cobre', 200, 3,'kg');
 
 
 
@@ -64,9 +64,10 @@ CREATE TABLE PRODUTOS(
     , UNIDADEMEDIDA VARCHAR (200) NOT NULL
 );
 
-;
 DROP TABLE VENDAS;
 CREATE TABLE VENDAS(
     id BIGINT not null primary key GENERATED ALWAYS AS IDENTITY (START WITH 1, INCREMENT BY 1)
-    ,  VALOR DOUBLE PRECISION
+    ,  VALOR varchar(220) NOT NULL
+,  nomeproduto varchar(200) not null
+,  vendedor varchar(200) not null
 );
