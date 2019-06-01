@@ -1,41 +1,39 @@
 
 
-<%@page import="java.util.ArrayList"%>
 <%@page import="br.com.fatecpg.jdbc.produtos.Produto"%>
+<%@page import="java.util.ArrayList"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <%@include file ="../WEB-INF/jspf/header.jspf"%>
 
 
 
-<h2>Cadastro de Produtos</h2>
+<h2>VENDAS</h2>
 <table class="table table-dark table-striped text-center">
             <thead>
             <th> #</th>
-            <th> Nome </th>
             <th> Valor </th>
-            <th> Unidade de Medida </th>
-            <th> Quantidade </th>
+            <th> Produto </th>
+            <th> Vendedor </th>
             <th>Comandos</th>
             </thead>
             
             <%Produto produto = new Produto();%>
-            <% for(Produto c: produto.getList()){ %>
+            <% for(Produto v: produto.getList()){ %>
                 <tr>
-                    <td><%=c.getId()%></td>
-                    <td><%=c.getNome()%></td>
-                    <td>R$ <%=c.getValor()%> (un)</td>
-                    <td><%=c.getUnidade()%></td>
-                    <td><%=c.getQuantidade()%></td>
+                    <td><%=v.getId()%></td>
+                    <td><%=v.getNome()%></td>
+                    <td><%=v.getValor()%></td>
+                    <td><%=v.getQuantidade()%></td>
                         
                     <td>
-                        <a href="alterar.jsp?index=<%=c.getId()%>">Alterar</a>
-                        <a href="excluir.jsp?index=<%=c.getId()%>&name=<%=c.getNome()%>">Excluir</a>    
+                        <a href="alterar.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getQuantidade()%>">Alterar</a>
+                        <a href="excluir.jsp?index=<%=v.getId()%>&name=<%=v.getNome()%>&valor=<%=v.getValor()%>&vendedor=<%=v.getQuantidade()%>">Excluir</a>    
                     </td>
                 </tr>
             <% } %>
         </table>
-       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddProduto"><a href="adicionar.jsp">Adicionar Novo</a></button>
+       <button type="button" class="btn text-light btn-dark float-right" id="buttonAddCliente"><a href="adicionar.jsp">Adicionar Novo</a></button>
   
         
     </body>
@@ -49,11 +47,12 @@
 <%
     if(request.getParameter("adicionarProduto")!=null){
         if(request.getParameter("adicionarProduto").equals("Enviar")){
-            String nome = request.getParameter("txtnm");
-            String valor = request.getParameter("txtnm");
-            String unidadeMedida = request.getParameter("txtmedida");
-            String quant = request.getParameter("txtqtd");
-            Produto.incluirProduto();
+            String nomeProduto = request.getParameter("txtnm");
+            String valor = request.getParameter("txtvalor");
+            String quantidade = request.getParameter("txtquantidade");
+            String unidade = request.getParameter("txtunidade");
+            
+            Produto.incluirProduto(nomeProduto,valor,quantidade,unidade);
         }
         response.sendRedirect(request.getRequestURI());
     }
@@ -61,7 +60,11 @@
     if(request.getParameter("alterarProduto")!=null){
         if(request.getParameter("alterarProduto").equals("Alterar")){
             int index = Integer.parseInt(request.getParameter("index"));
-            Produto.alterarProduto(index, request.getParameter("txtnm"));
+            String nomeProduto = request.getParameter("txtnm");
+            String valor = request.getParameter("txtvalor");
+            String quantidade = request.getParameter("txtquantidade");
+            String unidade = request.getParameter("txtunidade");
+            Produto.alterarProduto(index,nomeProduto,valor,quantidade,unidade);
         }
         response.sendRedirect(request.getRequestURI());
     }    

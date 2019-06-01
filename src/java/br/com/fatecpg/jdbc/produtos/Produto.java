@@ -5,7 +5,8 @@
  */
 package br.com.fatecpg.jdbc.produtos;
 
-
+import br.com.fatecpg.jdbc.produtos.*;
+import br.com.fatecpg.jdbc.cliente.*;
 import br.com.fatecpg.jdbc.Db;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -20,24 +21,30 @@ import java.util.ArrayList;
  */
 public class Produto {
 
+    public static ArrayList<Produto> getLista() {
+        return lista;
+    }
+
+    public static void setLista(ArrayList<Produto> aLista) {
+        lista = aLista;
+    }
+
     private int id;
     private String nome;
-    private static ArrayList<Produto> lista;
+    private String valor;
+    private String quantidade;
     private String unidade;
-    private int valor;
-    private int quantidade;
-
     
+    private static ArrayList<Produto> lista;
 
-    public Produto(int id, String nome, int valor, int quantidade, String unidade) {
-        
+    public Produto(int id, String nome, String valor, String quantidade, String unidade) {
         this.id = id;
         this.nome = nome;
-        this.unidade = unidade;
         this.valor = valor;
         this.quantidade = quantidade;
-
+        this.unidade = unidade;
     }
+
     
     public Produto (){
         
@@ -54,9 +61,9 @@ public class Produto {
         while(rs.next()){
             Produto c = new Produto(
                     rs.getInt("ID"), 
-                    rs.getString("NOME"),
-                     rs.getInt("VALOR"),
-                    rs.getInt("QUANTIDADE"),
+                    rs.getString("NOMEPRODUTO"),
+                    rs.getString("VALOR"),
+                    rs.getString("QUANTIDADE"),
                     rs.getString("UNIDADEMEDIDA"));
             
             lista.add(c);
@@ -78,24 +85,30 @@ public class Produto {
         con.close();
     }
     
-    public static void alterarProduto(int id,String nome)throws Exception{
+    public static void alterarProduto(int id,String nome,String valor, String quantidade, String unidade)throws Exception{
         Connection con = Db.getConnection();
         String SQL = "update produtos "
-                + "set name=? "
+                + "set nomeproduto=?,valor=?,quantidade=?, unidade=? "
                 + "where id=?";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
-        st.setInt(2, id);
+        st.setString(2, valor);
+        st.setString(3, quantidade);
+        st.setString(4, unidade);
+        st.setInt(5, id);
         st.executeUpdate();
         st.close();
         con.close();
     }
     
-    public static void incluirProduto(String nome)throws Exception{
+    public static void incluirProduto(String nome,String valor, String quantidade, String unidade)throws Exception{
         Connection con = Db.getConnection();
-        String SQL = "insert into produtos values(default,?)";
+        String SQL = "insert into produtos values(default,?,?,?,?)";
         PreparedStatement st = con.prepareStatement(SQL);
         st.setString(1, nome);
+        st.setString(2, valor);
+        st.setString(3, quantidade);
+        st.setString(4, unidade);
         st.executeUpdate();
         st.close();
         con.close();
@@ -117,6 +130,22 @@ public class Produto {
         this.nome = nome;
     }
 
+    public String getValor() {
+        return valor;
+    }
+
+    public void setValor(String valor) {
+        this.valor = valor;
+    }
+
+    public String getQuantidade() {
+        return quantidade;
+    }
+
+    public void setQuantidade(String quantidade) {
+        this.quantidade = quantidade;
+    }
+
     public String getUnidade() {
         return unidade;
     }
@@ -125,22 +154,7 @@ public class Produto {
         this.unidade = unidade;
     }
 
-    public int getValor() {
-        return valor;
-    }
-
-    public void setValor(int valor) {
-        this.valor = valor;
-    }
-
-    public int getQuantidade() {
-        return quantidade;
-    }
-
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
-    }
-
+  
     
     
 }
